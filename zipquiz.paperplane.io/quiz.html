@@ -1,0 +1,52 @@
+<html>
+  <head>
+  	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <title>Zip Quiz: Make a Quiz</title>
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <link type="text/css" rel="stylesheet" href="style.css"/>
+      <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css"/>
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <link href="css/materialdesignicons.min.css" media="all" rel="stylesheet" type="text/css" />
+      <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  </head>
+  <body onload="">
+
+  	<nav class="teal">
+  		<div class="nav-wrapper">
+  			<a href="index.html" class="brand-logo center" style="font-family: Pacifico ">Zip Quiz</a>
+  		</div>
+  	</nav>
+
+
+	<div class="row">
+	    <form class="col s12">
+	    	<div class="my-wrapper valign-wrapper center-align">
+	            <div class="input-field col s12">
+	            	<input id="Question1" type="text" class="validate">
+	                <label for="first_name">What is the study of animals called?</label>
+	            </div>
+	            <div class="input-field col s12">
+	            	<input id="Question2" type="text" class="validate">
+	                <label for="first_name">Who was America's first president?</label>
+	            </div>
+	            <div class="input-field col s12">
+	            	<input id="Question3" type="text" class="validate">
+	                <label for="first_name">What is the name of Apple's phone?</label>
+	            </div>
+			</div> 
+		</form>
+	</div>
+		        	 
+	<div class="fixed-action-btn click-to-toggle">
+   		<a class="btn-large teal waves-effect waves-light" onclick="checkAnswers()"><i>Finish</i></a> 
+ 	</div>
+
+  	
+
+	
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+	<script type="text/javascript" src="main.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/4.8.2/firebase.js"></script>
+  </body>
+</html>
