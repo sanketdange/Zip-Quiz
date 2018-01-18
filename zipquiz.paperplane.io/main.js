@@ -1,61 +1,46 @@
-var numQuestions = 1; 
-var id = 0;
+var numQuestions = 1;
 var question = document.getElementById("container");
 var questions = [question];
 
-
-function onSubmit(argument) {
-
+// creates question/answer inputs on create screen
+function makeQuestion() {
+    numQuestions++;
+    var c = question.cloneNode(true);
+    questions[numQuestions] = c;
+    c.value = null;
+    document.getElementById("questions").appendChild(c);
 }
 
-function makeQuestion(num){
-	numQuestions = num;
-	console.log(numQuestions);
-	for (var i = 1; i <= num; i++) {
-		var c = question.cloneNode(true);
-		c.id = question.id + i;
-		questions[i] = c;
-		document.getElementById("questions").appendChild(c);
-	}
-
+// removes question/answer inputs on create screen
+function removeQuestion(num) {
+    numQuestions--;
+    var q = document.getElementById("questions");
+    if (questions.length > 0) {
+        q.removeChild(q.children[q.children.length - 1]);
+    }
 }
 
-function createURL(){
-	var str = "";
-	for(var i = 0; i < numQuestions; i++){
-		var q = questions[i].children[0].children[0].value;
-		var a = questions[i].children[1].children[0].value;
-		str += q;
-		str += "/";
-		str += a;
-		str += "?";
-	}
-	if (str.length < 3) {
-		str = "unavailable. Please enter both inputs"
-	}
-	alert("Your URL is " + str);
+// creates url for quiz
+function createUrl() {
+    var str = "";
+    for (var i = 0; i < numQuestions; i++) {
+        var q = questions[i].children[0].children[0].value;
+        var a = questions[i].children[1].children[0].value;
+        str += q;
+        str += "/";
+        str += a;
+        str += "?";
+    }
+    str = CryptoJS.AES.encrypt(str, "url");
+
+    if (str.length < 3) {
+        str = "unavailable. Please enter both inputs"
+    }
+    alert("Your URL is zipquiz.paperplane.io/" + str);
 }
 
-function checkAnswers() {
-	var one = document.getElementById("Question1").value;
-	var two = document.getElementById("Question2").value;
-	var three = document.getElementById("Question3").value;
+// Decrypt: str = str.toString(CryptoJS.enc.Utf8);
 
-	var score = 0;
-	if (one == "Zoology"){
-		score++;
-
-	}
-
-	if(two == "George Washington"){
-		score++;
-	} 
-
-	if(three == ("iPhone")){
-		score++;
-	}
-	alert("You got " + score + " out of 3");
-}
 
 // function makeQuiz(){
 // 	var dict = {};
@@ -81,7 +66,7 @@ function checkAnswers() {
 // 		}
 // 	}
 // 	var i = 0;
-	
+
 // 	for (var i = 0; i < Object.keys(dict).length; i++){
 // 		var input = document.createElement("INPUT");
 // 		input.className = "input-field col s6 valign-wrapper center-gn";
@@ -89,7 +74,7 @@ function checkAnswers() {
 // 		label.htmlFor = "first_name";
 // 		label.className = "validate";
 // 	}
-	
+
 
 
 // }

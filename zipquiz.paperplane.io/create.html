@@ -1,60 +1,46 @@
-<html>
-  <head>
-  	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <title>Zip Quiz: Make a Quiz</title>
+<html style="overflow-y: scroll;">
+   <head>
+      <title>Zip Quiz: Make a Quiz</title>
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-      <link type="text/css" rel="stylesheet" href="style.css"/>
+      <link type="text/css" rel="stylesheet" href="createstyle.css"/>
       <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css"/>
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <link href="css/materialdesignicons.min.css" media="all" rel="stylesheet" type="text/css" />
       <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  </head>
-  <body onload="">
+   </head>
+   <body>
+      <nav class="teal">
+         <div class="nav-wrapper">
+            <a href="index.html" class="brand-logo center" style="font-family: Pacifico ">Zip Quiz</a>
+         </div>
+      </nav>
 
-  	<nav class="teal">
-  		<div class="nav-wrapper">
-  			<a href="index.html" class="brand-logo center" style="font-family: Pacifico ">Zip Quiz</a>
-  		</div>
-  	</nav>
+      <div class="row">
+         <form class="col s9">
+            <div class="row" id="questions">
+               <div id="container">
+                  <div class="input-field col s6">
+                     <input id="Question" type="text" class="validate">
+                     <label for="first_name">Question</label>
+                  </div>
+                  <div class="input-field col s6">
+                     <input id="type" type="text" class="validate">
+                     <label for="first_name">Answer</label>
+                  </div>
+               </div>
+            </div>
+         </form>
+      </div>
 
-
-	<div class="row">
-	    <form class="col s12">
-	    	<div class="my-wrapper valign-wrapper center-align">
-		        <div class="row" id="questions">
-		        	<div id="container">
-			            <div class="input-field col s6">
-			            	<input id="Question" type="text" class="validate">
-			                <label for="first_name">Question</label>
-			        	</div>
-			        	 <div class="input-field col s6">
-			        	 	<input id="type" type="text" class="validate">
-			                <label for="first_name">Answer</label>
-			        	 </div>
-		        	</div>
-				</div>
-				<a class='dropdown-button btn-large btn-small waves-effect waves-light teal' href='#' data-activates='drop2'># of Questions</a>
-                <ul id='drop2' class='dropdown-content'>
-				    <li><a onclick="makeQuestion(1)">1</a></li>
-				    <li><a onclick="makeQuestion(2)">2</a></li>
-				    <li><a onclick="makeQuestion(3)"">3</a></li>
-				    <li><a onclick="makeQuestion(4)">4</a></li>
-				    <li><a onclick="makeQuestion(5)">5</a></li>
-				</ul>
-			</div> 
-		</form>
-	</div>
-		        	 
-	<div class="fixed-action-btn click-to-toggle">
-   		<a class="btn-large teal waves-effect waves-light" href="quiz.html">Finish</a> 
- 	</div>
-
-  	
-
-	
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-	<script type="text/javascript" src="main.js"></script>
-	<script src="https://www.gstatic.com/firebasejs/4.8.2/firebase.js"></script>
-  </body>
+      <div class="fixed-action-btn">
+         <a class='btn-large teal waves-effect waves-light' href='#' onclick="makeQuestion()"><i class="material-icons">add</i></a>
+         <a class='btn-large teal waves-effect waves-light' href='#' onclick="removeQuestion()"><i class="material-icons">delete</i></a>	        	 
+         <a class="btn-large teal waves-effect waves-light" onclick="createUrl()">Finish</a> 
+      </div>
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+      <script type="text/javascript" src="main.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
+   </body>
 </html>
